@@ -1,0 +1,35 @@
+Package: sass
+Title: Syntactically Awesome StyleSheets (Sass) Compiler
+Version: 0.1.0.9000
+Authors@R: c(
+    person("Timothy", "Mastny", email = "tim.mastny@gmail.com", role = c("aut", "cre")),
+    person("LibSass project contributors", role = "cph", comment = "LibSass library"),
+    person("RStudio", role = c("cph", "fnd"))
+    )
+Description: A Sass compiler, powered by the LibSass library.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+URL: https://github.com/rstudio/sass
+BugReports: https://github.com/rstudio/sass/issues
+SystemRequirements: GNU make
+Imports: digest
+Suggests: testthat, knitr, rmarkdown
+VignetteBuilder: knitr
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: sass
+RemoteUsername: rstudio
+RemoteRef: master
+RemoteSha: c73867da1d7a07b65da1d175ae072417f7387404
+GithubRepo: sass
+GithubUsername: rstudio
+GithubRef: master
+GithubSHA1: c73867da1d7a07b65da1d175ae072417f7387404
+Author: Timothy Mastny [aut, cre],
+  LibSass project contributors [cph] (LibSass library),
+  RStudio [cph, fnd]
+Maintainer: Timothy Mastny <tim.mastny@gmail.com>
+Built: R 3.5.1; x86_64-w64-mingw32; 2018-12-07 21:42:48 UTC; windows
+Archs: i386, x64

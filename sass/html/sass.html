@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Compile Sass to CSS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sass {sass}"><tr><td>sass {sass}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compile Sass to CSS</h2>
+
+<h3>Description</h3>
+
+<p>Compile Sass to CSS using LibSass.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sass(input = NULL, options = sass_options(), output = NULL,
+  cache_options = sass_cache_options())
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>input</code></td>
+<td>
+<p>Accepts raw Sass, a named list of variables, or a list of raw Sass and/or named variables.
+See <code><a href="as_sass.html">as_sass</a></code> and <code><a href="sass_import.html">sass_import</a></code> / <code><a href="sass_import.html">sass_file</a></code> for more details.</p>
+</td></tr>
+<tr valign="top"><td><code>options</code></td>
+<td>
+<p>Compiler options for Sass. Please specify options using
+<code><a href="sass_options.html">sass_options</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>output</code></td>
+<td>
+<p>Specifies path to output file for compiled CSS.</p>
+</td></tr>
+<tr valign="top"><td><code>cache_options</code></td>
+<td>
+<p>Caching options for Sass. Please specify options using
+<code><a href="sass_cache_options.html">sass_cache_options</a></code>. Caching is turned off by default for
+interactive R sessions, and turned on for non-interactive ones.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>If <code>output = NULL</code>, the function returns a string value
+of the compiled CSS. If the output path is specified, the compiled
+CSS is written to that file and <code>invisible()</code> is returned.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><a href="http://sass-lang.com/guide">http://sass-lang.com/guide</a>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# raw Sass input
+sass("foo { margin: 122px * .3; }")
+
+# list of inputs, including named variables
+sass(list(
+  list(width = "122px"),
+  "foo { margin: $width * .3; }"
+))
+
+
+# import a file
+tmp_file &lt;- tempfile()
+writeLines("foo { margin: $width * .3; }", tmp_file)
+sass(list(
+  list(width = "122px"),
+  sass_file(tmp_file)
+))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>sass</em> version 0.1.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>
